@@ -53,13 +53,15 @@ ActiveRecord::Schema.define(version: 2023_10_12_000000) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
+  
 
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
